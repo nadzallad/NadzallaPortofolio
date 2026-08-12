@@ -89,12 +89,12 @@ header {
             #111827
         );
 
-    background-size: 200% 200%;
+    background-size: 150% 150%;
     animation: gradientMove 8s ease infinite;
 
     color: white;
     text-align: center;
-    padding: 100px 20px 80px;
+    padding: 150px 20px 80px;
     overflow: hidden;
 }
 
@@ -514,7 +514,8 @@ footer p {
     }
 
     header p {
-        font-size: 16px;
+        font-size: 16px
+        ;
     }
 
     nav {
