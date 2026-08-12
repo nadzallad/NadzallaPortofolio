@@ -70,6 +70,7 @@ body::after {
 
 header {
     position: relative;
+    height: 100vh;
 
     background:
         radial-gradient(
@@ -94,8 +95,13 @@ header {
 
     color: white;
     text-align: center;
-    padding: 175px 20px 175px;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+}
+
+header.container{
+    padding: 0;
 }
 
 @keyframes gradientMove {
