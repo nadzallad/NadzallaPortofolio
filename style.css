@@ -83,7 +83,7 @@ header {
         ),
         linear-gradient(135deg, #0f172a, #1e293b, #111827);
 
-
+    background-size: 150% 150%;
     animation: gradientMove 8s ease infinite;
 
     color: white;
