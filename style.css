@@ -216,3 +216,326 @@ header p {
         transform: translateY(0);
     }
 }
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    animation: navAppear 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes navAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav a {
+    position: relative;
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    left: 50%;
+    bottom: 4px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+}
+
+nav a:hover::after {
+    width: 50%;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 0;
+}
+
+/* ================= HEADINGS ================= */
+
+h2 {
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #38bdf8,
+        #6366f1,
+        #38bdf8
+    );
+
+    background-size: 200% 100%;
+    border-radius: 10px;
+    margin: 12px auto 0;
+
+    animation: lineMove 2s linear infinite;
+}
+
+@keyframes lineMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* ================= ABOUT ================= */
+
+#about > p {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+    gap: 28px;
+}
+
+.card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+
+    overflow: hidden;
+
+    animation: cardAppear 0.8s ease both;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #38bdf8,
+        #6366f1
+    );
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s ease;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: rgba(56, 189, 248, 0.08);
+
+    top: -60px;
+    right: -60px;
+
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.3);
+
+    border-color: #38bdf8;
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover::after {
+    transform: scale(2);
+}
+
+.card h3 {
+    position: relative;
+    z-index: 2;
+
+    font-size: 21px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.card p {
+    position: relative;
+    z-index: 2;
+
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+
+    color: #475569;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.card li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+
+    color: #38bdf8;
+    font-weight: bold;
+
+    transition: transform 0.3s ease;
+}
+
+.card li:hover {
+    transform: translateX(6px);
+    color: #0f172a;
+}
+
+.card li:hover::before {
+    transform: rotate(360deg);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 70px 20px 55px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .container {
+        width: 92%;
+        padding: 60px 0;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+}
