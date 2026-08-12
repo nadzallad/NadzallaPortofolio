@@ -21,7 +21,6 @@ body {
 body::before {
     content: "";
     position: fixed;
-
     border-radius: 50%;
     background: rgba(56, 189, 248, 0.08);
     filter: blur(80px);
@@ -34,8 +33,6 @@ body::before {
 body::after {
     content: "";
     position: fixed;
-    width: 450px;
-    height: 450px;
     border-radius: 50%;
     background: rgba(99, 102, 241, 0.08);
     filter: blur(80px);
