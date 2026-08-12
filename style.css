@@ -65,3 +65,49 @@ body::after {
         transform: translate(-120px, -100px);
     }
 }
+
+/* ================= HEADER ================= */
+
+header {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(56, 189, 248, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(99, 102, 241, 0.3),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #111827
+        );
+
+    background-size: 150% 150%;
+    animation: gradientMove 8s ease infinite;
+
+    color: white;
+    text-align: center;
+    padding: 100px 20px 80px;
+    overflow: hidden;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
