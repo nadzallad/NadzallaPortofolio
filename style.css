@@ -111,3 +111,108 @@ header {
         background-position: 0% 50%;
     }
 }
+
+/* ================= FLOATING LIGHT ================= */
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.1);
+    filter: blur(20px);
+    top: -180px;
+    left: -100px;
+    animation: float 6s ease-in-out infinite;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.12);
+    filter: blur(20px);
+    bottom: -120px;
+    right: -80px;
+    animation: float2 7s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(60px, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-50px, -30px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* ================= HEADER CONTENT ================= */
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: clamp(36px, 6vw, 60px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    animation: fadeDown 1s ease forwards;
+}
+
+header p {
+    font-size: 18px;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: auto;
+
+    animation: fadeUp 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
